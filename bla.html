@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Using Internal CSS</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		<style type="text/css">
+			body {
+				font-family: arial;
+				background-color: rgb(185,179,175);}
+			h1 {
+				background-color: rgb(255,255,255);
+				color: rgb(185,179,175);}
+
+			h2 {
+				background-color: #ee3e80;
+				padding: inherit;
+			width: 70%
+		hieght: 20%}
+
+
+
+			table, td, th {
+    border: 1px solid yellow;}
+
+table {
+    border-collapse: collapse;
+    width: 70%;}
+
+th {
+    height: 50px;}
+
+card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+		padding-top: 9px;
+}
+card2 {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+		padding-top: 190px;
+		padding-right: 60px;
+}
+
+/* Add some padding inside the card container */
+.container {
+    padding: 2px 16px;
+		position: relative;
+}
+text {
+	right:50px
+
+}
+.visit{
+	position: absolute;
+  top: 10;
+  right: 0;
+}
+
+.tablink {
+    background-color: #555;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 25px 10px;
+    font-size: 10px;
+    width: 23.2%;
+}
+.tablink:hover {
+    background-color: #777;
+}
+.tabcontent {
+    color: white;
+    display: none;
+    padding: 50px;
+    text-align: center;
+}
+		</style>
+	</head>
+	<body>
+		<h1><center> <br> MAGAZINE <br><center><br></h1>
+
+
+
+<div class= "card">
+
+	<a href="https://www.change.org"><img src="/Users/Somya/Desktop/new.png" alt = "Avatar" style="width:30%";"hieght:20%" align = "right"></a>
+ <button class="visit"> Visit Here</button>
+	</div>
+</div>
+
+<h2>National News</h2>
+
+
+		<div id = "news1" class = "tabcontent">
+			<h3>National News</h3>
+			<p><a href = "http://www.ndtv.com/india-news/pm-assured-article-370-will-be-respected-says-mehbooba-mufti-1736502"> read article 1 here </a></p>
+		</div>
+
+	<div id="news2" class="tabcontent">
+  <h3>National News</h3>
+  <p><a href = "http://www.ndtv.com/india-news/pm-assured-article-370-will-be-respected-says-mehbooba-mufti-1736502"> read article 2 here </a></p>
+</div>
+
+<div id="news3" class="tabcontent">
+<h3>National News</h3>
+<p><a href = "http://www.ndtv.com/india-news/pm-assured-article-370-will-be-respected-says-mehbooba-mufti-1736502"> read article 3 here </a></p>
+</div>
+
+<button class="tablink" onclick="openCity('news1', this, 'yellow')" id="defaultOpen"><a href = "http://www.ndtv.com/india-news/pm-assured-article-370-will-be-respected-says-mehbooba-mufti-1736502"> Article 1</a></button>
+<button class="tablink" onclick="openCity('news2', this, 'yellow')" id="defaultOpen"><a href = "http://www.ndtv.com/india-news/pm-assured-article-370-will-be-respected-says-mehbooba-mufti-1736502"> Article 2</a></button>
+<button class="tablink" onclick="openCity('news3', this, 'yellow')" id="defaultOpen"><a href = "http://www.ndtv.com/india-news/pm-assured-article-370-will-be-respected-says-mehbooba-mufti-1736502"> Article 3</a></button>
+
+<br>
+<br>
+<br><br>
+
+	<h2>Inter-National News</h2>
+
+	<div id = "news1" class = "tabcontent">
+		<h3>National News</h3>
+		<p><a href = "http://www.ndtv.com/india-news/pm-assured-article-370-will-be-respected-says-mehbooba-mufti-1736502"> read article 1 here </a></p>
+	</div>
+
+	<div id="news2" class="tabcontent">
+	<h3>National News</h3>
+	<p><a href = "http://www.ndtv.com/india-news/pm-assured-article-370-will-be-respected-says-mehbooba-mufti-1736502"> read article 2 here </a></p>
+	</div>
+
+	<div id="news3" class="tabcontent">
+	<h3>National News</h3>
+	<p><a href = "http://www.ndtv.com/india-news/pm-assured-article-370-will-be-respected-says-mehbooba-mufti-1736502"> read article 3 here </a></p>
+	</div>
+
+	<button class="tablink" onclick="openCity('news1', this, 'yellow')" id="defaultOpen"><a href = "http://www.ndtv.com/india-news/pm-assured-article-370-will-be-respected-says-mehbooba-mufti-1736502"> Article 1</a></button>
+	<button class="tablink" onclick="openCity('news2', this, 'yellow')" id="defaultOpen"><a href = "http://www.ndtv.com/india-news/pm-assured-article-370-will-be-respected-says-mehbooba-mufti-1736502"> Article 2</a></button>
+	<button class="tablink" onclick="openCity('news3', this, 'yellow')" id="defaultOpen"><a href = "http://www.ndtv.com/india-news/pm-assured-article-370-will-be-respected-says-mehbooba-mufti-1736502"> Article 3</a></button>
+
+
+	<br>
+	<br>
+	<br><br>
+
+		<h2>Entertainment</h2>
+
+		<div id = "news1" class = "tabcontent">
+			<h3>Entertainment</h3>
+			<p>read article 1 here </a></p>
+		</div>
+
+		<div id="news2" class="tabcontent">
+		<h3>National News</h3>
+		<p><a href = "http://www.ndtv.com/india-news/pm-assured-article-370-will-be-respected-says-mehbooba-mufti-1736502"> read article 2 here </a></p>
+		</div>
+
+		<div id="news3" class="tabcontent">
+		<h3>National News</h3>
+		<p><a href = "http://www.ndtv.com/india-news/pm-assured-article-370-will-be-respected-says-mehbooba-mufti-1736502"> read article 3 here </a></p>
+		</div>
+
+		<button class="tablink" onclick="openCity('news1', this, 'yellow')" id="defaultOpen"><a href = "http://www.ndtv.com/india-news/pm-assured-article-370-will-be-respected-says-mehbooba-mufti-1736502"> Article 1</a></button>
+		<button class="tablink" onclick="openCity('news2', this, 'yellow')" id="defaultOpen"><a href = "http://www.ndtv.com/india-news/pm-assured-article-370-will-be-respected-says-mehbooba-mufti-1736502"> Article 2</a></button>
+		<button class="tablink" onclick="openCity('news3', this, 'yellow')" id="defaultOpen"><a href = "http://www.ndtv.com/india-news/pm-assured-article-370-will-be-respected-says-mehbooba-mufti-1736502"> Article 3</a></button>
+
+
+
+</body>
+
+</html>
