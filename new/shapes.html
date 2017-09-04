@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Shapes</title>
+	<meta charset="UTF-8">
+	<style type="text/css">
+		.small {
+			width: 100px;
+			height:100px;
+			padding:20px;
+		}
+		.big {
+			width: 600px;
+			height: 600px;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			margin-left: -300px;
+			margin-top: -300px;
+		}
+		.disp_form {
+			width: 200px;
+			height: 100px;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			margin-left: -100px;
+			margin-top: -50px;
+		}
+	</style>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#circle').addClass('small');
+			$('#triangle').addClass('small');
+			$('#square').addClass('small');
+			$('#rectangle').addClass('small');
+			$('#hexagon').addClass('small');
+			$('#circle').on('click', function() {
+				expand('circle');
+			});
+			$('#triangle').on('click', function() {
+				expand('triangle');
+			});
+			$('#square').on('click', function() {
+				expand('square');
+			});
+			$('#rectangle').on('click', function() {
+				expand('rectangle');
+			});
+			$('#hexagon').on('click', function() {
+				expand('hexagon');
+			});
+			function expand (shape) {
+				$('#circle').hide();
+				$('#triangle').hide();
+				$('#square').hide();
+				$('#rectangle').hide();
+				$('#hexagon').hide();
+				$('#main').hide();
+				$('#'+shape).show();
+				document.getElementById(shape).className = "big";
+				showForm(shape);
+			};
+			function showForm (shape) {
+				document.getElementById(shape+'_form').style.visibility = "visible";
+				document.getElementById(shape+'_form').className = "disp_form";
+			};
+			$('#circle_form').submit(function() {
+				if ($("input[type='submit']").val() == "Submit") {
+					var radius = parseFloat($('input[name="radius"]').val());
+					var area = 3.14*radius*radius;
+					var per = 2*3.14*radius;
+					window.alert("Area = "+area+";  "+"Perimeter = "+per+"\nRefresh to go back.");
+					return false;
+				}
+			});
+			$('#triangle_form').submit(function() {
+				if ($("input[type='submit']").val() == "Submit") {
+					var side1 = parseFloat($('input[name="side1"]').val());
+					var side2 = parseFloat($('input[name="side2"]').val());
+					var side3 = parseFloat($('input[name="side3"]').val());
+
+					var s = (side1+side2+side3)/2;
+					var area = Math.sqrt(s*(s-side1)*(s-side2)*(s-side3));
+					var per = side1+side2+side3;
+					window.alert("Area = "+area+";  "+"Perimeter = "+per+"\nRefresh to go back.");
+					return false;
+				}
+			});
+			$('#square_form').submit(function() {
+				if ($("input[type='submit']").val() == "Submit") {
+					var side = parseFloat($('input[name="side"]').val());
+					var area =side*side;
+					var per = 4*side;
+					window.alert("Area = "+area+";  "+"Perimeter = "+per+"\nRefresh to go back.");
+					return false;
+				}
+			});
+			$('#rectangle_form').submit(function() {
+				if ($("input[type='submit']").val() == "Submit") {
+					var length = parseFloat($('input[name="length"]').val());
+					var breadth = parseFloat($('input[name="breadth"]').val());
+					var area = length*breadth;
+					var per = 2*(length+breadth);
+					window.alert("Area = "+area+";  "+"Perimeter = "+per+"\nRefresh to go back.");
+					return false;
+				}
+			});
+			$('#hexagon_form').submit(function() {
+				if ($("input[type='submit']").val() == "Submit") {
+					var hex_side = parseFloat($('input[name="hex_side"]').val());
+					var area = 2.59*hex_side*hex_side;
+					var per = 6*hex_side;
+					window.alert("Area = "+area+";  "+"Perimeter = "+per+"\nRefresh to go back.");
+					return false;
+				}
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<h1 align="center"> Shapes Assignment </h1><br>
+	<h2 id="main" align="center">Select Shape </h2>
+	<hr><br>
+	<br>
+	<div align="center">
+		<img src="images/circle.png" id="circle"><br>
+		<h3 align="center">Circle</h3>
+		<img src="images/triangle.png" id="triangle"><br>
+		<h3 align="center">Triangle</h3>
+		<img src="images/square.png" id="square"><br>
+		<h3 align="center">Square</h3>
+		<img src="images/rectangle.png" id="rectangle"><br>
+		<h3 align="center">Rectangle</h3>
+		<img src="images/hexagon.png" id="hexagon"><br>
+		<h3 align="center">Hexagon</h3>
+
+	</div>
+
+	<div align="center">
+		<form id="circle_form" style="visibility:hidden;">
+			<font color="white">Enter radius:</font> <input type="number" name="radius" min="0"><br>
+			<input type="submit" value="Submit">
+		</form>
+
+		<form id="triangle_form" style="visibility:hidden;">
+			<font color="white">Enter length of first side:</font> <input type="number" name="side1" min="0"><br>
+			<font color="white">Enter length of second side:</font> <input type="number" name="side2" min="0"><br>
+			<font color="white">Enter length of third side:</font> <input type="number" name="side3" min="0"><br>
+			<input type="submit" value="Submit">
+		</form>
+
+		<form id="square_form" style="visibility:hidden;">
+			<font color="white">Enter side length:</font> <input type="number" name="side" min="0"><br>
+			<input type="submit" value="Submit">
+		</form>
+
+		<form id="rectangle_form" style="visibility:hidden;">
+			<font color="white">Enter length:</font> <input type="number" name="length" min="0"><br>
+			<font color="white">Enter breadth:</font> <input type="number" name="breadth" min="0"><br>
+			<input type="submit" value="Submit">
+		</form>
+
+		<form id="hexagon_form" style="visibility:hidden;">
+			Enter side length: <input type="number" name="hex_side" min="0"><br>
+			<input type="submit" value="Submit">
+		</form>
+	</div>
+
+</body>
+</html>
