@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {font-family: "Lato", sans-serif;}
+
+/* Style the tab */
+div.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+div.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+div.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+div.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+</style>
+</head>
+<body>
+
+<p>Click on the buttons inside the tabbed menu:</p>
+
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'Background')">Background</button>
+  <button class="tablinks" onclick="openCity(event, 'Boxes')">Boxes</button>
+  <button class="tablinks" onclick="openCity(event, 'Fonts')">Fonts</button>
+  <button class="tablinks" onclick="openCity(event, 'Texts')">Texts</button>
+</div>
+
+<div id="Background" class="tabcontent">
+  <h3>Background</h3>
+  <ul>
+   <li>background-color</li>
+   <p>Sets the background color onto the page.</p>
+
+   <li>border</li>
+   <p>Sets the border properties of the page.</p>
+
+   <li>background-image</li>
+   <p>Sets an image as the background.</p>
+
+   <li>border-color</li>
+   <p>Sets a color of the border of the page.</p>
+
+
+
+ </ul>
+</div>
+
+<div id="Boxes" class="tabcontent">
+  <h3>Boxes</h3>
+<ul>
+  <li>margin</li>
+  <p>sets margin properties. margin-left, right, top anf bottom.</p>
+
+  <li>overflow</li>
+  <p>what would happen if the contains goes beyond the margin is specified by overflow.</p>
+
+  <li>padding</li>
+  <p>padding-bottom, left, right, left that helps in the box element.</p>
+
+  <li>display</li>
+  <p>how the box should be siplayed on the page.</p>
+
+  <li>align-content</li>
+  <p>alignment of box content.</p>
+
+</ul>
+</div>
+
+<div id="Fonts" class="tabcontent">
+  <h3>Fonts</h3>
+  <ul>
+    <li>font</li>
+    <p>declare the font of the text succeding the declaration </p>
+
+    <li>font family</li>
+    <p>declare the various fonts used in the page.</p>
+
+    <li>font size</li>
+    <p>declare the font size</p>
+
+    <li>font style</li>
+    <p>declare the font style of the text succeding the declaration </p>
+
+
+
+  </ul>
+</div>
+
+<div id="Texts" class="tabcontent">
+  <h3>Texts</h3>
+  <ul>
+    <li>text align</li>
+    <p>Aligns texts to right, left or centre of the page.</p>
+
+    <li>word wrap</li>
+    <p>text wraps to the next line.</p>
+
+    <li>word spacing</li>
+    <p>vary the word spacing in texts.</p>
+
+    <li>text shadow</li>
+    <p>adding shadow to texts.</p>
+
+</div>
+
+<script>
+function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+</script>
+
+</body>
+</html>
